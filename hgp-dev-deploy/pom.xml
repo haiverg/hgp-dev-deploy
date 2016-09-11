@@ -21,5 +21,36 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>org.apache.camel</groupId>
+    	<artifactId>camel-spring</artifactId>
+    	<version>2.15.0</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-api</artifactId>
+    	<version>1.6.4</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-log4j12</artifactId>
+    	<version>1.6.1</version>
+    </dependency>
   </dependencies>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.felix</groupId>
+  			<artifactId>maven-bundle-plugin</artifactId>
+  			<version>3.2.0</version>
+  			<extensions>true</extensions>
+  			<configuration>
+  				<instructions>
+  					<Export-Package>com.redhat.training*</Export-Package>
+  					<Import-Package>org.slf4j;version=1.6.1,*</Import-Package>
+  				</instructions>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>
